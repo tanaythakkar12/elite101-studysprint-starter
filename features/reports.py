@@ -1,8 +1,6 @@
-"""Reporting helpers for StudySprint.
+"""Reporting helpers for StudySprint."""
 
-Heads up: this module is half-built on purpose. `deck_summary` works, but
-`category_report` is still a stub with a clear seam to finish (see the tickets).
-"""
+from features.core import count_by_category
 
 
 def deck_summary(data):
@@ -10,7 +8,11 @@ def deck_summary(data):
 
 
 def category_report(data):
-    # TODO(ticket): tally each card into a {category: count} dict and return it.
-    # For now this returns an empty report so the menu never crashes.
-    report = {}
+    # Get all the flashcards from the deck
+    cards = data["cards"]
+
+    # Count how many cards belong to each category
+    report = count_by_category(cards)
+
+    # Return the category counts
     return report
