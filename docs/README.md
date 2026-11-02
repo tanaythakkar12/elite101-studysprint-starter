@@ -38,3 +38,9 @@ python -m unittest
 Pick a ticket from the `tickets/` folder (or the Issues tab once your section
 repo exists). Read `CONTRIBUTING.md` for the Definition of Done every pull
 request has to meet.
+
+## Review Missed Cards
+
+StudySprint now allows users to review flashcards they answered incorrectly during a quiz.
+
+After completing a quiz, select option 8 to retry only the missed cards. If no cards were missed, the program displays a message instead.
