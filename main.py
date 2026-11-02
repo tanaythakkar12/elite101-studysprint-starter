@@ -17,11 +17,13 @@ def show_menu():
     print("5) Show the last card")
     print("6) Category breakdown")
     print("7) Deck summary")
+    print("8) Review missed cards")
     print("0) Quit")
 
 
 def main():
     data = storage.load_data()
+    missed_cards = []
     while True:
         show_menu()
         try:
@@ -34,10 +36,11 @@ def main():
             break
         elif choice == "1":
             cards = core.get_cards(data)
-            score = core.run_quiz(cards)
+            missed_cards = []
+            score = core.run_quiz(cards, missed=missed_cards)
             total = len(cards)
             print("You scored " + str(score) + "/" + str(total) +
-                  " (" + str(core.percent_correct(score, total)) + "%).")
+            " (" + str(core.percent_correct(score, total)) + "%).")
         elif choice == "2":
             core.list_cards(core.get_cards(data))
         elif choice == "3":
@@ -57,6 +60,12 @@ def main():
             print(core.count_by_category(core.get_cards(data)))
         elif choice == "7":
             print(reports.deck_summary(data))
+        elif choice == "8":
+            if missed_cards:
+                print("Reviewing missed cards:")
+                core.run_quiz(missed_cards)
+            else:
+                print("No missed cards to review!")
         else:
             print("Please pick a number from the menu.")
 

@@ -9,7 +9,7 @@ def check_answer(card, guess):
     return guess.strip().lower() == card["answer"].strip().lower()
 
 
-def run_quiz(cards, ask=input, show=print):
+def run_quiz(cards, ask=input, show=print, missed=None):
     score = 0
     for card in cards:
         guess = ask(card["question"] + " ")
@@ -18,6 +18,8 @@ def run_quiz(cards, ask=input, show=print):
             score += 1
         else:
             show("Not quite. The answer was: " + card["answer"])
+            if missed is not None:
+                missed.append(card)
     return score
 
 
