@@ -1,40 +1,55 @@
 # StudySprint
 
-A small flashcard and quiz trainer you run in the terminal. Load a deck of cards
-from a JSON file, quiz yourself, and see your score at the end. This is your
-squad's starting product for Elite 101 - you'll grow it one ticket at a time.
+StudySprint is a Python flashcard and quiz app that runs in the terminal.
+It helps students study, practice questions, and track their quiz scores.
 
-## Run it
+## Features
+
+- Take a flashcard quiz and see your score and percentage.
+- View all flashcards in your deck.
+- Add new flashcards with questions and answers.
+- Study flashcards by category.
+- View the last flashcard in the deck.
+- See how many flashcards are in each category.
+- View a summary of your flashcard deck.
+
+## How to Run
+
+Open the project in VS Code or GitHub Codespaces.
+
+Run:
 
 ```bash
 python main.py
 ```
 
-## Run the tests
+Choose an option from the menu to start studying.
+
+## How to Run Tests
+
+Run:
 
 ```bash
 python -m unittest
 ```
 
-## How it's laid out
+## Project Files
 
-| File | What it does |
+| File | Purpose |
 |---|---|
-| `main.py` | The menu loop you interact with |
-| `storage.py` | Loads and saves the JSON data file |
-| `features/core.py` | The deck, the quiz loop, and small helpers |
-| `features/reports.py` | Summary reports (half-built - finish it via a ticket) |
-| `data/studysprint.json` | The card deck and score history |
-| `tests/test_core.py` | Example tests to copy from |
+| `main.py` | Runs the main menu |
+| `storage.py` | Loads and saves flashcard data |
+| `features/core.py` | Handles flashcards and quizzes |
+| `features/reports.py` | Creates deck summaries |
+| `data/studysprint.json` | Stores flashcard data |
+| `tests/` | Contains automated tests |
 
 ## Team
 
-<!-- Add yourself here on your Git lesson: - Your Name (role) -->
+- Tanay Thakkar - Solo Developer
 
-- (your squad will add themselves here)
+## Future Improvements
 
-## Where to start
-
-Pick a ticket from the `tickets/` folder (or the Issues tab once your section
-repo exists). Read `CONTRIBUTING.md` for the Definition of Done every pull
-request has to meet.
+- Add a Review Missed Cards feature to practice incorrectly answered questions.
+- Improve quiz progress tracking.
+- Add more options for organizing flashcards.
